@@ -1,0 +1,711 @@
+////////////////////////////////////
+// SECTION ONE
+.section-one {
+    background-color: $color-primary;
+    margin-top: $margin;
+    text-transform: capitalize;
+    padding: 6rem 2rem;
+    position: relative;
+
+    // RESPONSIVE
+    @include respond(tablet-l) {
+        padding: 3rem 1.5rem;
+    }
+
+    // SECTION ONE BOX
+    &-box {
+        display: flex;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            flex-direction: column;
+        }
+
+        // SECTION ONE BOX ALL CHILD
+        &>* {
+            flex: 1 1 0;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                flex: 1 1 100%;
+            }
+        }
+    }
+
+    // SECTION ONE CONTENT
+    &-content {
+        display: flex;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        // SECTION ONE CONTENT :FIRST OF TYPE
+        &:first-of-type {
+            margin-right: $margin-right-section;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // SECTION ONE ICON
+    &-icon {
+
+        &>svg {
+            @include sizeSVG(8rem);
+        }
+    }
+
+    // SECTION ONE HEADER
+    &-header {}
+
+    // SECTION ONE HEADING
+    &-heading {
+        font-size: 2.6rem;
+        color: $color-heading;
+        padding-bottom: $padding-bottom-heading;
+    }
+
+    // SECTION ONE PARAGRAPH
+    &-paragraph {
+        color: $color-paragarph;
+        line-height: lineHeight('');
+        font-size: $font-size-paragraph;
+
+        // RESPONSIVE
+        @include respond(phone) {
+            font-size: $font-size-phone;
+            line-height: $line-height-phone;
+        }
+    }
+
+    // SECTION ONE :AFTER
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 90rem;
+        height: 3rem;
+        border-top: 1px solid $color-spratied;
+        border-radius: 60%;
+        display: block;
+        transform: translateX(-50%);
+
+        @include respond(tablet-p) {
+            width: 40rem;
+        }
+    }
+}
+
+////////////////////////////////////
+// SECTION WHAT WE
+.section-what-we {
+    text-transform: capitalize;
+    margin-top: $margin-big-section;
+
+    // RESPONSIVE
+    @include respond(tablet-l) {
+        padding: 3rem 1.5rem;
+    }
+
+    // SECTION WHAT WE HEADER
+    &-header {
+        text-align: center;
+    }
+
+    // SECTION WHAT WE ICON
+    &-icon {
+        @include translateSVG;
+
+        // RESPONSIVE
+        @include respond(phone) {
+            transform: translate(0, -0.5rem);
+        }
+
+        &>svg {
+            @include sizeSVG('');
+        }
+    }
+
+    // SECTION WHAT WE TITLE
+    &-title {
+        display: inline-block;
+        text-align: left;
+
+        // RESPONSIVE
+        @include respond(phone) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    // SECTION WHAT WE HEADING
+    &-heading {
+        color: $color-heading;
+        font-size: $font-size-h2;
+        padding-bottom: $padding-bottom-heading;
+    }
+
+    // SECTION WHAT WE PARAGRAPH
+    &-paragraph {
+        color: $color-paragarph;
+        font-size: $font-size-paragraph;
+
+        // RESPONSIVE
+        @include respond(phone) {
+            font-size: $font-size-phone;
+        }
+    }
+
+
+    // SECTION WHAT WE CONTENT
+    &-content {
+        position: relative;
+        margin-top: $margin-medium-section;
+        display: flex;
+
+        // RESPONAIVE
+        @include respond(tablet-p) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        // SECTION WHAT WE CONTENT :AFTER
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: $color-spratied;
+            top: 0;
+            left: 49%;
+            transform: translateX(-50%);
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                display: none;
+            }
+        }
+    }
+
+    // SECTION WHAT WE CONTENT COL
+    &-content-col {
+
+        // SECTION WHAT WE CONTENT COL :FIRST CHILD
+        &:first-child {
+            margin-right: $margin-right-section;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // SECTION WHAT WE CONTENT BOX
+    &-content-box {
+        display: flex;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            flex-direction: column;
+        }
+
+        @include respond(tablet-p) {
+            margin-bottom: 4rem;
+        }
+
+        // SECTION WHAT WE CONTENT BOX :NOT-LAST OF TYPE
+        &:not(:last-of-type) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    // SECTION WHAT WE CONTENT ICON
+    &-content-icon {
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            margin-bottom: 2rem;
+        }
+
+        &>svg {
+            @include sizeSVG(6rem);
+        }
+    }
+
+    // SECTION WHAT WE CONTENT HEADER
+    &-content-header {}
+
+    // SECTION WHAT WE CONTENT HEADING
+    &-content-heading {
+        color: $color-heading;
+        font-size: $font-size-h3;
+        padding-bottom: $padding-bottom-heading;
+    }
+
+    // SECTION WHAT WE CONTENT PARAGRAPH
+    &-content-paragraph {
+        color: $color-paragarph;
+        font-size: $font-size-paragraph;
+        line-height: lineHeight('');
+
+        // RESPONSIVE
+        @include respond(phone) {
+            font-size: $font-size-phone;
+            line-height: $line-height-phone;
+        }
+    }
+}
+
+
+////////////////////////////////////
+// SECTION OUR PROJECT
+.section-our-project {
+    margin-top: 15rem;
+    text-transform: capitalize;
+    background-color: $color-fifth;
+    padding: $padding-section;
+    position: relative;
+
+    // SECTION OUR PROJECT HEADER
+    &-header {
+        text-align: center;
+        margin-top: -4rem;
+    }
+
+    // SECTION OUR PROJECT ICON
+    &-icon {
+        @include translateSVG;
+
+        // RESPONSIVE
+        @include respond(phone) {
+            transform: translate(0, -0.5rem);
+        }
+
+        &>svg {
+            @include sizeSVG('');
+        }
+    }
+
+    // SECTION OUR PROJECT TITLE
+    &-title {
+        display: inline-block;
+        text-align: left;
+        width: 35%;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            width: 47%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    // SECTION OUR PROJECT TITLE HEADING
+    &-title-heading {
+        color: $color-heading;
+        font-size: $font-size-h2;
+        padding-bottom: $padding-bottom-heading;
+    }
+
+    // SECTION OUR PROJECT TITLE PARAGRAPH
+    &-title-paragraph {
+        color: $color-paragarph;
+        font-size: $font-size-paragraph;
+        line-height: lineHeight('');
+
+        // RESPONSIVE
+        @include respond(phone) {
+            font-size: $font-size-phone;
+            line-height: $line-height-phone;
+        }
+    }
+
+    // SECTION OUR PROJECT CONTROL CATEGORY
+    &-control-category {
+        text-align: center;
+        margin: $margin-control-category 0;
+    }
+
+    // SECTION OUR PROJECT CONTROL CATEGORY ITEM
+    &-control-item {
+        font-size: $font-size-item;
+        display: inline-block;
+        width: 15rem;
+        height: 4rem;
+        line-height: 4rem;
+        border-radius: $border-radius;
+        border: 1px solid $color-border-item;
+        color: $font-icon-color;
+        font-weight: 700;
+        transition: all .5s ease;
+        cursor: pointer;
+
+        // HOVER
+        &:hover {
+            background-color: $color-primary;
+            border-color: transparent;
+            color: rgba(0, 0, 0, 0.349);
+
+            @include respond(device) {
+                background-color: transparent;
+            }
+        }
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            display: block;
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            font-size: 2.5rem;
+            padding: .6rem 0;
+            box-sizing: content-box;
+        }
+
+        // SECTION OUR PROJECT CONTROL CATEGORY ITEM :NOT-LAST CHILD
+        &:not(:last-of-type) {
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        // SECTION OUR PROJECT CONTROL CATEGORY ITEM :NOT-LAST CHILD
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+
+        // SECTION OUR PROJECT CONTROL CATEGORY ITEM :LAST CHILD
+        &:last-child {
+            text-transform: uppercase;
+        }
+    }
+
+    // SECTION OUR PROJECT ACTIVE
+    .active {
+        background-color: $color-primary;
+        border-color: transparent;
+        color: black;
+    }
+
+    // SECTION OUR PROJECT CATEGORY
+    &-category {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    // SECTION OUR PROJECT CATEGORY BOX
+    &-category-box {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-primary;
+        width: 27.8rem;
+        height: 28.7rem;
+        margin-bottom: 2rem;
+        border-radius: $border-radius;
+        overflow: hidden;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        text-align: center;
+        color: $font-icon-color;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            width: 49%;
+            margin-right: 1%;
+            height: auto;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    // SECTION OUR PROJECT CATEGORY IMAGE
+    &-category-image {
+        overflow: hidden;
+        border-radius: $border-radius;
+
+        // SECTION OUR PROJECT CATEGORY BOX IMAGE IMG
+        &>img {
+            width: 100%;
+            height: 100%;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                max-height: 100%;
+            }
+        }
+    }
+
+    // SECTION OUR PROJECT CATEGORY ICONS
+    &-category-icons {
+        position: relative;
+        background-color: $color-primary;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+
+        // SECTION OUR PROJECT CATEGORY BOX ICONS I
+        &>a {
+            text-decoration: none;
+            flex-basis: 50%;
+            font-size: 2rem;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        // SECTION OUR PROJECT CATEGORY BOX ICONS :AFTER
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: $color-fifth;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    // SECTION OUR PROJECT :AFTER
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 12rem;
+        background-color: inherit;
+        top: -6.3rem;
+        left: 0;
+        border-radius: 100% 100% 0 0;
+        z-index: -1;
+    }
+
+}
+
+
+////////////////////////////////////
+// SECTION MEET OUR TEAM
+.section-meet-our-team {
+    text-transform: capitalize;
+    padding: $padding-section;
+
+    // RESPONSIVE
+    @include respond(phone) {
+        padding: 1.5rem;
+    }
+
+    // SECTION MEET OUR TEAM BOX
+    &-box {}
+
+    // SECTION MEET OUR TEAM HEADER
+    &-header {
+        text-align: center;
+    }
+
+    // SECTION MEET OUR TEAM ICON
+    &-icon {
+
+        &>svg {
+            @include sizeSVG('');
+        }
+    }
+
+    // SECTION MEET OUR TEAM BOX TITLE
+    &-title {
+        text-align: left;
+        display: inline-block;
+        width: 35%;
+
+        // RESPONSIVE
+        @include respond(tablet-l) {
+            width: 60%;
+        }
+
+        @include respond(tablet-p) {
+            width: 60%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    // SECTION MEET OUR TEAM TITLE HEADING
+    &-title-heading {
+        color: $color-heading;
+        font-size: $font-size-h2;
+        padding-bottom: $padding-bottom-heading;
+    }
+
+    // SECTION MEET OUR TEAM TITLE PARAGRPH
+    &-title-paragraph {
+        color: $color-paragarph;
+        font-size: $font-size-paragraph;
+        line-height: lineHeight('');
+
+        // RESPONSIVE
+        @include respond(phone) {
+            font-size: $font-size-phone;
+            line-height: $line-height-phone;
+        }
+    }
+
+    // SECTION MEET OUR TEAM CONTENT
+    &-content {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    // SECTION MEET OUR TEAM CONTENT CARD
+    &-content-card {
+        width: 257px;
+        height: auto;
+        background-color: $color-fifth;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        transition: all .5s ease;
+
+        // RESPONSIVE
+        @include respond(tablet-l) {
+            width: 49%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        // SECTION MEET OUR TEAM CONTENT CARD :HOVER
+        &:hover {
+            transform: translateY(-20px);
+
+            // RESPONSIVE
+            @include respond(device) {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // SECTION MEET OUR TEAM CONTENT IMAGE
+    &-content-image {
+        height: 15rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+
+        // SECTION MEET OUR TEAM CONTENT IMAGE => SPAN
+        & span {
+            display: inline-block;
+            width: 110px;
+            height: 110px;
+            background-image: url(../img/avatar.png);
+            background-size: 302%;
+            border-radius: 50%;
+            border: 4px solid white;
+
+            // RESPONSIVE
+            @include respond(phone) {
+                border-width: 3px;
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        // SECTION MEET OUR TEAM CONTENT IMAGE => IMAGE--1
+        &--1 {
+
+            &>span {
+                background-position: 50% -105%;
+            }
+        }
+
+        // SECTION MEET OUR TEAM CONTENT IMAGE => IMAGE--2
+        &--2 {
+
+            &>span {
+                background-position: 50% -79%;
+            }
+        }
+
+        // SECTION MEET OUR TEAM CONTENT IMAGE => IMAGE--3
+        &--3 {
+
+            &>span {
+                background-position: 50% -53%;
+            }
+        }
+
+        // SECTION MEET OUR TEAM CONTENT IMAGE => IMAGE--4
+        &--4 {
+
+            &>span {
+                background-position: 50% -27%;
+            }
+        }
+
+    }
+
+    // SECTION MEET OUR TEAM CONTENT INFO
+    &-content-info {}
+
+    // SECTION MEET OUR TEAM CONTENT HEADING
+    &-content-heading {
+        font-size: $font-size-h3;
+        color: $color-heading;
+    }
+
+    // SECTION MEET OUR TEAM CONTENT TITLE
+    &-content-title {
+        font-size: 1.6rem;
+        color: lighten($color-heading, 10%);
+    }
+
+    // SECTION MEET OUR TEAM CONTENT SOCIAL
+    &-content-social {
+        background-color: white;
+        margin: 4rem 0;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-evenly;
+
+        // SECTION MEET OUR TEAM CONTENT SOCIAL I
+
+        & a {
+            text-decoration: none;
+        }
+
+        &>a i {
+            font-size: 2.5rem;
+            color: $font-icon-color;
+            cursor: pointer;
+            transition: all .5s ease;
+        }
+
+        // SECTION MEET OUR TEAM CONTENT SOCIAL I:HOVER
+        & a i:hover {
+            color: $font-icon-color-hover;
+        }
+    }
+}

@@ -1,0 +1,548 @@
+///////////////////////////////////////
+// NAV INFORMATION
+.nav-information {
+    background-color: $color-secondary;
+    text-transform: capitalize;
+    padding: 0 1rem;
+
+    // RESPONSIVE
+    @include respond(tablet-p) {
+        display: none;
+    }
+
+    // NAV INFORMATION CONTENT
+    &-content {
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    // NAV INFORMATION INFO
+    &-info {
+        text-align: center;
+
+        // NAV INFORMATION INFO SPAN
+        &>span {
+            display: inline-block;
+            width: 10rem;
+            height: 3rem;
+            line-height: 3rem;
+            background-color: $color-primary;
+            border-radius: .5rem;
+
+            // NAV INFORMATION INFO I
+            &>i {
+                padding: 0 .5rem 0 0;
+                font-size: $font-size-icon-medium;
+                vertical-align: text-top;
+            }
+
+            // NAV INFORMATION INFO :LAST CHILD
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    // NAV INFORMATION SOCIAL
+    &-social {
+        margin-left: auto;
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
+        text-align: center;
+        color: $color-third;
+        font-size: $font-size-icon-big;
+
+        // NAV INFORMATION SOCIAL SPAN
+        &>a {
+            width: 6.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid $color-border;
+            text-decoration: none;
+            color: inherit;
+
+            // NAV INFORMATION SOCIAL SPAN :FIRST CHILD
+            &:first-of-type {
+                border-left: 1px solid $color-border;
+            }
+        }
+    }
+}
+
+///////////////////////////////////////
+// NAV CONTACT
+.nav-contact {
+    overflow: hidden;
+
+    // NAV CONTACT BOX
+    &-box {
+        height: 12rem;
+        display: flex;
+        align-items: center;
+        color: $color-third;
+
+        // NAV CONTACT BOX ALL CHILD
+        &>* {
+            flex: 1 1 0;
+        }
+    }
+
+    // NAV CONTACT LOGO
+    &-logo {
+        text-align: center;
+    }
+
+    // NAV CONTACT BRAND
+    &-brand {
+        text-decoration: none;
+        font-size: 4rem;
+        color: inherit;
+    }
+
+    // NAV CONTACT CONTACTS
+    &-contacts {
+        text-align: right;
+        text-transform: capitalize;
+        align-self: flex-end;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            align-self: center;
+        }
+
+        // NAV CONTACT CONTACTS SPAN
+        &>div {
+            position: relative;
+            width: 50px;
+            display: inline-block;
+            text-align: center;
+            padding: 1rem;
+
+            // RESPONSIVE
+            @include respond(tablet-l) {
+                display: block;
+                padding: 1rem;
+                margin: 0 auto;
+            }
+
+            // NAV CONTACT CONTACTS CHILD(2)
+            &:nth-child(2)::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 1px solid;
+                border-color: transparent rgba(0, 0, 0, 0.363);
+                top: 0;
+                left: auto;
+                right: 0;
+                transform: scaleY(0.4);
+
+                @include respond(tablet-l) {
+                    display: none;
+                }
+            }
+
+            // NAV CONTACT CONTACTS SPAN I
+            &>i {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    // NAV CONTACT CONTACTS ICON
+    &-contacts-icon {}
+
+    // NAV CONTACT CONTACTS HOVER
+    &-contacts-hover {
+        width: 12.5rem;
+        position: absolute;
+        top: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid $color-secondary;
+        color: inherit;
+        padding: 1rem 0;
+        border-radius: 5px;
+        opacity: 0;
+        transition: all .5s ease;
+
+        // RESPONSIVE
+        @include respond(tablet-l) {
+           top: 0;
+           left: auto;
+           right: -200%;
+           transform: translateX(0);
+           opacity: 1;
+           border-radius: 0;
+           padding: 1.5rem 0;
+           border: none;
+           font-weight: 700;
+        }
+
+        @include respond(phone) {
+            right: -120%;
+        }
+
+        // AFTER
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -30px;
+            border-style: solid;
+            border-width: 15px 15px 15px 15px;
+            border-color: $color-secondary transparent transparent transparent;
+
+            @include respond(tablet-l) {
+                display: none;
+            }
+        }
+    }
+
+    // HOVER
+    &-contacts &-contacts-icon:hover &-contacts-hover {
+        opacity: 1;
+    }
+}
+
+///////////////////////////////////////
+// NAVIAGATION
+.navigation {
+    position: relative;
+    background-color: $color-secondary;
+    text-transform: capitalize;
+    padding: 0 1rem;
+
+    // NAVIAGTION BOX
+    &-box {
+        height: 5rem;
+        display: flex;
+        align-items: center;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            height: auto;
+            flex-direction: column-reverse;
+            padding: 1rem 0;
+        }
+
+        // NAVIAGTION BOX ALL CHILD
+        &>* {
+            align-self: stretch; 
+        }
+    }
+
+    // NAVIAGTION NAV
+    &-nav {}
+
+    // NAVIAGTION NAV TOGGLE
+    &-nav-toggle {
+        display: none;
+        transition: all .4s ease;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 25px;
+            top: 1.4rem;
+            right: 2rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        // RESPONSIVE
+        @include respond(phone) {
+            top: .9rem;
+        }
+
+    }
+
+    // NAVIAGTIONNAV TOGGLE ACTIVE
+    &-nav-toggle--active {
+        transform: rotate(45deg);
+        transition: all .4s ease;
+
+        // AFTER
+        &>span::after {
+            background-color: transparent;
+        }
+
+        // BEFORE
+        &>span::before {
+            transform: rotate(90deg);
+        }
+    }
+
+    // NAVIAGTION NAV TOGGLE ICONS
+    &-nav-toggle-icons {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        background-color: $color-third;
+        height: 2px;
+        border-radius: 10px;
+
+        // AFTER AND BEFORE
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: inherit;
+            background-color: inherit;
+            border-radius: inherit;
+        }
+
+        // BEFORE
+        &::before {
+            transform: translateY(-350%);
+        }
+
+        // AFTER
+        &::after {
+            transform: translateY(250%);
+        }
+    }
+
+    // NAVIAGTION NAV NAV
+    &-nav-nav {
+        display: flex;
+        height: 100%;
+        text-align: center;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            position: absolute;
+            display: block;
+            background-color: $color-secondary;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 0;
+            max-height: 0;
+            flex-direction: column;
+            transition: height 2s linear;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        // NAVIAGTION NAV NAV => ACTIVE
+        .active {
+            background-color: $color-primary;
+        }
+
+        // NAVIAGTION NAV NAV => ACTIVE :AFTER
+        .active::after {
+            content: '';
+            position: absolute;
+            border-width: 7px 7px 7px 7px;
+            border-style: solid;
+            border-color: transparent transparent $color-arrow transparent;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                top: 0;
+                left: 0;
+                transform: translateX(0);
+                width: 100%;
+                height: 100%;
+                background-color: $color-primary;
+                border: none;
+            }
+        }
+    }
+
+    // NAVIAGTION NAV NAV ACTIVE
+    &-nav-nav--active {
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            height: auto;
+            max-height: 2000px;
+            transition: max-height 5s linear;
+        }
+    }
+
+    // NAVIAGTION NAV ITEMS
+    &-nav-items {
+        display: flex;
+        position: relative;
+        align-items: center;
+        color: white;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all .5s ease;
+
+        // NAVIAGTION NAV ITEMS:HOVER
+        &:hover {
+            background-color: $color-primary;
+        }
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            display: block;
+            margin: 1rem 0;
+        }
+
+        // NAVIAGTION NAV ITEMS:LAST CHILD
+        &:not(:last-child) {
+            margin-right: 1rem;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // NAVIAGTION NAV LINK
+    &-nav-link:link,
+    &-nav-link:visited {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: black;
+        padding: .8rem;
+        line-height: 3;
+       
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            position: relative;
+            font-size: 1.5rem;
+            z-index: 10;
+            text-align: left;
+        }
+    }
+
+    // NAVIAGTION NAV FORM
+    &-form {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end;
+        text-align: right;
+        flex-grow: 1;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+            text-align: left;
+            margin-left: 2.5rem;
+        }
+    }
+
+    // FORM
+    form {
+        width: 100%;
+    }
+
+    // NAVIAGTION FORM BOX
+    &-form-box {
+        height: 100%;
+
+        // NAVIAGTION FORM BOX INPUT
+        & input {
+            border: none;
+            padding: 1rem 3rem 1rem 5rem;
+            height: inherit;
+            text-transform: inherit;
+            outline-color: $color-third;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                width: 60%;
+                border-radius: 2rem;
+                font-size: 1.5rem;
+                outline: none;
+            }
+
+            // RESPONSIVE
+            @include respond(phone) {
+                width: 75%;
+                font-size: 2rem;
+            }
+        }
+
+        // NAVIAGTION FORM BOX ICON I
+        & i {
+            position: relative;
+            width: 2rem;
+            color: $color-third;
+            text-align: center;
+            font-size: 2rem;
+            vertical-align: middle;
+            margin-right: -4rem;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+                font-size: 2.2rem;
+            }
+
+            @include respond(phone) {
+                vertical-align: text-bottom;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+///////////////////////////////////////
+// HEADER
+.header {
+    background-image: linear-gradient($color-transparent, $color-transparent), url('../img/header.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    position: relative;
+
+    // RESPONSIVE
+    @include respond(phone) {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    // HEADER BOX
+    &-box {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: $color-primary;
+        text-align: center;
+        font-size: 5.8rem;
+        text-transform: capitalize;
+    }
+
+    // HEADER CONTENT
+    &-content {}
+
+    // HEADER CONTENT HEADING
+    &-content-heading {
+        font-size: inherit;
+    }
+
+    // HEADER CONTENT TITLE
+    &-content-title {
+        font-size: .7em;
+    }
+}
+

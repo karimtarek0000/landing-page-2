@@ -1,0 +1,56 @@
+//////////////////////////////////////////
+// COLOR ELEMENT
+$color-primary: white;
+$color-secondary: #eceef4;
+$color-third: #2579b9;
+$color-fourth: #3190cf;
+$color-fifth: #efefef;
+$color-six: #2b2c2d;
+
+// COLOR FONT
+$color-heading: #6d6e71;
+$color-paragarph: #bbbbbd;
+
+// COLOR BORDER
+$color-border: #dee0e6;
+$color-spratied: darken($color-primary, 20%);
+
+// COLOR ARROW
+$color-arrow: #1faae2;
+
+$color-border-item: #cecece;
+// FONT SIZE
+$font-size-h2: 4.4rem;
+$font-size-h3: 2.4rem;
+$font-size-paragraph: 1.6rem;
+$font-size-item: 1.6rem;
+
+$font-size-icon-big: 2rem;
+$font-size-icon-medium: 1.5rem;
+
+$font-size-phone: 2.5rem;
+$font-icon-color: #c7c9ce;
+$font-icon-color-hover: #6d6e71;
+
+// PADDING
+$padding-bottom-heading: 1rem;
+$padding-section: 5rem;
+
+// COLOR TRANSARENT RGBA
+$color-transparent: rgba(49, 144, 207, .6);
+
+// MARGIN
+$margin: 4rem;
+$margin-big-section: 8rem;
+$margin-medium-section: 6rem;
+$margin-right-section: 5rem;
+
+// LINE HEIGHT
+$line-height-paragraph: 2.5rem;
+$line-height-phone: 4rem;
+
+// OTHER
+$border-radius: 5px;
+$margin-control-category: 7rem;
+$font-color-icon-footer: #494c4d;
+$background-color-button-input: #494c4d;
